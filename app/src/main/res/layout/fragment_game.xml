@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#f5f5f5"
+    tools:context=".fragment.FragmentGame">
+
+    <com.av.smoothviewpager.Smoolider.SmoothViewpager
+        android:id="@+id/smoolider"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingTop="20dp"
+        android:paddingRight="10dp">
+
+    </com.av.smoothviewpager.Smoolider.SmoothViewpager>
+
+    <LinearLayout
+        android:id="@+id/show_send_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="16dp"
+        android:visibility="gone"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/shape_edittext_border"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/linear_league"
+            android:visibility="visible"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:id="@+id/imgclose"
+                android:background="@drawable/back_comment_close"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/Widget.AppCompat.ActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_close"
+                    app:tint="#FF0000">
+
+                </ImageView>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|right"
+                    android:paddingEnd="16dp"
+                    android:text="@string/selectLeague"
+                    android:textColor="#000"
+                    android:textSize="17sp"
+                    tools:ignore="RtlHardcoded,RtlSymmetry">
+
+                </TextView>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:id="@+id/recycle_select_league"
+                android:layout_gravity="center"
+                android:visibility="visible"
+                tools:listitem="@layout/row_select_league"
+                android:layout_height="300dp">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</FrameLayout>

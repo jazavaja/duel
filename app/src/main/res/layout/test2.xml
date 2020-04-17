@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/toolbar_back"
+        android:layout_marginRight="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginBottom="2dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotation="180"
+            android:tint="#888888"
+            android:layout_gravity="right|center"
+            style="@style/Widget.AppCompat.ActionButton"
+            app:srcCompat="@drawable/ic_arrow_forward"></ImageView>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tint="#888888"
+            android:paddingRight="16dp"
+            android:layout_gravity="left|center"
+            app:srcCompat="@drawable/ic_person"></ImageView>
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:padding="15dp"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/back_list_comment"></androidx.recyclerview.widget.RecyclerView>
+          <LinearLayout
+              android:id="@+id/show_send_comment"
+              android:layout_width="match_parent"
+              android:orientation="vertical"
+              android:visibility="gone"
+              android:layout_alignParentBottom="true"
+              android:layout_height="wrap_content">
+              <include layout="@layout/insert_comment"/>
+          </LinearLayout>
+    <LinearLayout
+        android:id="@+id/btncomment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="16dp"
+        android:gravity="center"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/back_comment"
+        android:minHeight="?actionBarSize"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:text="ثبت نظر" />
+    </LinearLayout>
+
+</RelativeLayout>

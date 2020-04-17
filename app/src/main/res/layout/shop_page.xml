@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backColor"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".MainActivity">
+ <com.google.android.material.tabs.TabLayout
+     android:id="@+id/tabLay"
+     android:layout_width="match_parent"
+     app:tabIndicatorHeight="0dp"
+     android:layout_height="?actionBarSize"
+     app:tabBackground="@drawable/selector_top_shop"
+     android:background="@drawable/shape_shop_tab"
+     app:tabSelectedTextColor="#fff"
+     app:tabMode="fixed"
+     android:layout_margin="10dp">
+    <com.google.android.material.tabs.TabItem
+        android:layout_width="wrap_content"
+        android:text="@string/coin_free"
+        android:id="@+id/coin_free"
+        android:layout_height="match_parent"/>
+
+    <com.google.android.material.tabs.TabItem
+        android:layout_width="wrap_content"
+        android:text="@string/ticket_free"
+        android:id="@+id/ticket_free"
+        android:layout_height="match_parent"/>
+ </com.google.android.material.tabs.TabLayout>
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:id="@+id/refresh"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginRight="16dp"
+            android:layout_marginLeft="16dp"
+            android:background="@drawable/shape_relative_back"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:src="@drawable/coin2"
+                    android:layout_marginTop="2dp"
+                    android:layout_height="150dp"/>
+            </RelativeLayout>
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:paddingTop="120dp"
+                android:clipToPadding="false"
+                android:fillViewport="true"
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/rec"
+                    android:nestedScrollingEnabled="true"
+                    android:background="@drawable/shape_shop_tab"
+                    android:layout_height="match_parent"
+                    tools:targetApi="lollipop">
+                </androidx.recyclerview.widget.RecyclerView>
+            </androidx.core.widget.NestedScrollView>
+
+        </RelativeLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>

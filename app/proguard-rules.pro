@@ -1,0 +1,7 @@
+-keep class com.google.** { *; }
+-keep class com.github.** { *; }
+-keep class org.apache.** { *; }
+-keep class com.android.** { *; }
+-keep class junit.** { *; }
+-keep class android.support.v7.widget.SearchView { *; }
+-keep class com.teamtext.duelgametohfe.Model.** { *; }

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backColor"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:weightSum="1"
+    tools:context=".MainActivity">
+
+    <com.jem.fliptabs.FlipTab
+        android:id="@+id/fliptabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:flipAnimationDuration="400"
+        app:highlightColor="#FF0000"
+        app:leftTabText="پرداخت"
+        app:overallColor="@color/colorPrimary"
+        app:rightTabText="شارژ"
+        app:startingTab="right"
+        app:textColor="#FF0000"
+        app:wobbleAngle="3"
+        app:wobbleReturnAnimationDuration="200">
+
+    </com.jem.fliptabs.FlipTab>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:layout_width="match_parent"
+    android:id="@+id/refresh"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp">
+
+        <com.github.florent37.shapeofview.shapes.RoundRectView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:shape_roundRect_topLeftRadius="40dp"
+            app:shape_roundRect_topRightRadius="40dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="2dp"
+                    android:src="@drawable/givemoney" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:alpha="0.8"
+                    android:background="@color/darck">
+
+                </ImageView>
+            </RelativeLayout>
+        </com.github.florent37.shapeofview.shapes.RoundRectView>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingTop="120dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/back_comment"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/layoutPardakht"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="?actionBarSize"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:background="@drawable/shape_edittext_border"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/mojodi"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="#FF0000"
+                            android:textSize="17sp">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingRight="16dp"
+                            android:text="@string/mojoddi">
+
+                        </TextView>
+                    </LinearLayout>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="?actionBarSize"
+                        android:layout_margin="6dp"
+                        android:background="@drawable/shape_edittext_border"
+                        android:gravity="center|right"
+                        android:id="@+id/mablagDarkhasti"
+                        android:hint="@string/mablag"
+                        android:padding="6dp">
+
+                    </EditText>
+                    <Button
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/send_request_payment"
+                        android:background="@drawable/shape_btn"
+                        android:text="@string/ersal_darkhast"
+                        android:textColor="#fff" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="3dp">
+                        <include
+                            android:id="@+id/empty"
+                            android:visibility="gone"
+                            layout="@layout/layout_empty"/>
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:id="@+id/recycleView"
+                            android:visibility="gone"
+                            android:layout_height="match_parent">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutSharzh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="?actionBarSize"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/shape_edittext_border"
+                        android:drawableRight="@drawable/ic_local_phone"
+                        android:drawablePadding="4dp"
+                        android:gravity="center|right"
+                        android:hint="شماره همراه خود را وارد کنید"
+                        android:id="@+id/mobile"
+                        android:inputType="number"
+                        android:maxLength="12"
+                        android:padding="6dp" />
+
+                    <com.marozzi.segmentedtab.SegmentedGroup
+                        android:id="@+id/operator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:weightSum="3"
+                        app:sg_background_color="@android:color/transparent"
+                        app:sg_background_color_selected="#F6F6F6"
+                        app:sg_corner_radius="22dp"
+                        app:sg_text_color="@color/darck"
+                        app:sg_text_color_selected="@color/darck">
+
+                        <com.marozzi.segmentedtab.SegmentedTab
+                            android:id="@+id/irancell"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="ایرانسل" />
+
+                        <com.marozzi.segmentedtab.SegmentedTab
+                            android:id="@+id/rightel"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="رایتل" />
+
+                        <com.marozzi.segmentedtab.SegmentedTab
+                            android:id="@+id/mci"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="همراه اول" />
+
+                    </com.marozzi.segmentedtab.SegmentedGroup>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="20dp"
+                        android:text="مبلغ شارژ(ریال)"
+                        android:textColor="#000"
+                        android:textSize="17sp">
+
+                    </TextView>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:id="@+id/amount"
+                        android:checkedButton="@id/radio_1"
+                        android:orientation="horizontal"
+                        android:weightSum="6">
+
+                        <RadioButton
+                            android:id="@+id/radio_1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_radio_selctor"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="500"
+                            android:textSize="12dp" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_radio_selctor"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="1000"
+                            android:textSize="12dp" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_radio_selctor"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="2000"
+                            android:textSize="12dp" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_radio_selctor"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="5000"
+                            android:textSize="12dp" />
+
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_radio_selctor"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="10000"
+                            android:textSize="12dp" />
+                        <RadioButton
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/shape_radio_selctor"
+                            android:button="@null"
+                            android:gravity="center"
+                            android:text="20000"
+                            android:textSize="12dp" />
+
+                    </RadioGroup>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="?actionBarSize"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="3dp"
+                        android:weightSum="100">
+
+                        <Button
+                            android:id="@+id/btn_req_sharj"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="60"
+                            android:background="@drawable/shape_btn"
+                            android:text="ارسال درخواست"
+                            android:textColor="#fff"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </RelativeLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</LinearLayout>

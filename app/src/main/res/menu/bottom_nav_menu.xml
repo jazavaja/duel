@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_comment"
+        android:enabled="true"
+        android:icon="@drawable/comment"
+        android:title="نظرات"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_rank"
+        android:enabled="true"
+        android:icon="@drawable/rank"
+        android:title="لیگ"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_play"
+        android:enabled="true"
+        android:icon="@drawable/play"
+        android:title="شروع بازی"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_mony"
+        android:enabled="true"
+        android:icon="@drawable/moneybag"
+        android:title="شارژ"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_buy"
+        android:enabled="true"
+        android:icon="@drawable/buy"
+        android:title="خرید"
+        app:showAsAction="ifRoom" />
+
+</menu>

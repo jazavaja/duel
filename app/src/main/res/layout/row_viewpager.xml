@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rel_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="55dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="55dp"
+    android:layout_marginBottom="5dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+        <TextView
+            android:id="@+id/txt_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="بازی بادکنک"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+        <com.jem.fliptabs.FlipTab
+            android:id="@+id/fliptabs"
+            android:layout_below="@id/txt_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:flipAnimationDuration="400"
+            app:highlightColor="#FF0000"
+            app:leftTabText="Offline"
+            app:overallColor="@color/colorPrimary"
+            app:rightTabText="Online"
+            app:startingTab="right"
+            app:textColor="#FF0000"
+            app:wobbleAngle="3"
+            app:wobbleReturnAnimationDuration="200">
+        </com.jem.fliptabs.FlipTab>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/fliptabs"
+            android:layout_margin="3dp"
+            app:cardCornerRadius="25dp"
+            app:cardUseCompatPadding="true">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+
+                android:id="@+id/img_slider"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="5dp"
+                android:scaleType="centerCrop"
+                app:cornerRadius="36dp" />
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+</RelativeLayout>

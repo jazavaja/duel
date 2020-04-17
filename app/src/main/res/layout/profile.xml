@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.40" />
+
+
+        <RelativeLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/guideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <com.github.florent37.shapeofview.shapes.CircleView
+                android:layout_width="90dp"
+                android:id="@+id/circlrIMG"
+                android:layout_height="90dp"
+                android:elevation="4dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                app:shape_circle_borderColor="#fff"
+                app:shape_circle_borderWidth="2dp">
+
+                <ImageView
+                    android:id="@+id/imgProfile"
+                    android:layout_width="match_parent"
+                    android:background="#fff"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_person">
+
+                </ImageView>
+            </com.github.florent37.shapeofview.shapes.CircleView>
+
+            <View
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:background="@drawable/back_profile"
+                android:layout_marginBottom="45dp">
+
+            </View>
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/layPic"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:tint="#fff"
+                    android:layout_gravity="right"
+                    style="@style/Widget.AppCompat.ActionButton"
+                    app:srcCompat="@drawable/ic_coins_big">
+
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="#fff"
+                    android:textSize="17sp"
+                    android:id="@+id/coin"
+                    android:layout_gravity="right"
+                    android:layout_height="match_parent"/>
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    app:srcCompat="@drawable/ic_cash_big"
+                    android:tint="#fff">
+
+                </ImageView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:text="0"
+                    android:id="@+id/ticket"
+
+                    android:paddingLeft="10dp"
+                    android:textColor="#fff"
+                    android:textSize="17sp"
+                    android:layout_gravity="left"
+                    android:layout_height="match_parent"/>
+
+
+            </androidx.appcompat.widget.Toolbar>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_below="@+id/layPic"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textSize="17sp"
+                android:textColor="#fff"
+                android:layout_above="@+id/circlrIMG"
+                android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_edittext_border_2"
+                android:drawableRight="@drawable/ic_local_phone"
+                android:drawablePadding="4dp"
+                android:gravity="center"
+                android:id="@+id/mobile"
+                android:hint="برای تغییر شماره موبایل با پشتیبانی تماس بگیرید"
+                android:maxLength="12"
+                android:padding="10dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_edittext_border"
+                android:drawableRight="@drawable/ic_user"
+                android:drawablePadding="4dp"
+                android:gravity="center|right"
+                android:id="@+id/name"
+                android:hint="@string/name"
+                android:maxLength="12"
+                android:padding="10dp" />
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_edittext_border"
+                android:drawableRight="@drawable/ic_mail"
+                android:drawablePadding="4dp"
+                android:gravity="center|right"
+                android:hint="ایمیل"
+                android:id="@+id/email"
+                android:inputType="textEmailAddress"
+                android:padding="10dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_edittext_border"
+                android:drawableRight="@drawable/ic_bank"
+                android:drawablePadding="4dp"
+                android:gravity="center|right"
+                android:hint="نام بانک"
+                android:id="@+id/bankName"
+                android:inputType="text"
+                android:maxLength="20"
+                android:padding="10dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_edittext_border"
+                android:drawableRight="@drawable/ic_borrow"
+                android:drawablePadding="4dp"
+                android:gravity="center|right"
+                android:hint="شماره شبا"
+                android:inputType="number"
+                android:id="@+id/shaba"
+                android:maxLength="26"
+                android:padding="10dp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_margin="10dp"
+                android:background="@drawable/shape_edittext_border"
+                android:drawableRight="@drawable/ic_borrow"
+                android:drawablePadding="4dp"
+                android:gravity="center|right"
+                android:id="@+id/card_number"
+                android:hint="شماره کارت"
+                android:inputType="number"
+                android:maxLength="16"
+                android:padding="10dp" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_margin="10dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_btn"
+                android:onClick="btnlogin"
+                android:text="ارسال"
+                android:textColor="#ffffff"
+                android:id="@+id/send"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

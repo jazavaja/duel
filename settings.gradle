@@ -1,0 +1,2 @@
+rootProject.name='Duelgame'
+include ':app'
