@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "501560935741",
+    "firebase_url": "https://duel-aecb4.firebaseio.com",
+    "project_id": "duel-aecb4",
+    "storage_bucket": "duel-aecb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501560935741:android:5cc905c615eb2d663c3154",
+        "android_client_info": {
+          "package_name": "com.teamtext.duelgametohfe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501560935741-gklu8ceevj03ajqggpaqc9ii5cs6nj3q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDovTrsm1Ymh2rx-1wBtInPA-vpvtuuxtY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501560935741-gklu8ceevj03ajqggpaqc9ii5cs6nj3q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
